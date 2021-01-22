@@ -32,14 +32,14 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @GetMapping("/update")
+    @GetMapping("update")
     public String updateStudentGet(@RequestParam Long id, Model model, Student student){
         model.addAttribute("students", studentService.findById(id));
 
-        return "/update";
+        return "update";
     }
 
-    @PostMapping("/update")
+    @PostMapping("update")
     public String updateStudentPost(Student student){
         studentService.updateStudent(student);
 
